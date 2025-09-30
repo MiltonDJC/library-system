@@ -20,12 +20,10 @@ class Libro with Digitalizable implements ItemBiblioteca {
   }
 
   @override
-  void mostrarInfo() {
-    print(
-      'Título: $titulo.\nAutor: $autor.\nDisponiblilidad: ${estaDisponible() ? 'Está disponible' : 'No está disponible'}.',
-    );
-    mostrarFormato();
-  }
+  String mostrarInfo() =>
+      '''Título: $titulo.\nAutor: $autor.\nDisponiblilidad: ${estaDisponible() ? 'Está disponible' : 'No está disponible'}.
+${mostrarFormato()}
+''';
 
   @override
   bool estaDisponible() => disponible ? true : false;
