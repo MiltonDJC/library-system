@@ -1,4 +1,4 @@
 abstract class ItemBiblioteca {
-  void mostrarInfo();
+  String mostrarInfo();
   bool estaDisponible();
 }
