@@ -27,7 +27,7 @@ ${mostrarFormato()}
   bool setDisponibilidad(bool disponibilidad) {
     if (_disponible == disponibilidad) {
       print(
-        'El $runtimeType sigue siendo ${_disponible ? 'Disponible' : 'No disponible'}.',
+        'El $runtimeType sigue siendo ${disponible ? 'Disponible' : 'No disponible'}.',
       );
       return _disponible;
     } else {

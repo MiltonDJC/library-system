@@ -5,12 +5,9 @@ class Usuario {
   List<Libro> librosPrestados = [];
   Usuario(this.nombre);
   void prestarLibro(Libro libro) {
-    if (libro.disponible) {
+    if (isLibroPrestable(libro)) {
       librosPrestados.add(libro);
       libro.disponible = false;
-      print('Libro prestado al usuario: $nombre.');
-    } else {
-      print('El libro no puede ser prestado nuevamente.');
     }
     print('');
   }
@@ -24,5 +21,15 @@ class Usuario {
       print('Libro no adquirido.');
     }
     print('');
+  }
+
+  bool isLibroPrestable(Libro libro) {
+    if (libro.disponible) {
+      print('Libro prestado al usuario: $nombre.');
+      return true;
+    } else {
+      print('El libro no puede ser prestado nuevamente.');
+      return false;
+    }
   }
 }
