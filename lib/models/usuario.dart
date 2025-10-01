@@ -10,7 +10,6 @@ class Usuario {
       libro.disponible = false;
       print(isLibroPrestableMessage(libro.disponible));
     }
-    print('');
   }
 
   void devolverLibro(Libro libro) {
@@ -24,19 +23,9 @@ class Usuario {
     print('');
   }
 
-  bool isLibroPrestable(Libro libro) {
-    if (libro.disponible) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  bool isLibroPrestable(Libro libro) => libro.disponible ? true : false;
 
-  String isLibroPrestableMessage(bool disponible) {
-    if (disponible) {
-      return 'Libro prestado al usuario: $nombre.';
-    } else {
-      return 'El libro no puede ser prestado nuevamente.';
-    }
-  }
+  String isLibroPrestableMessage(bool disponible) => disponible
+      ? 'Libro prestado al usuario: $nombre.'
+      : 'El libro no puede ser prestado nuevamente.';
 }

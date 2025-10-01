@@ -29,8 +29,7 @@ class Biblioteca {
       print('Todavía no hay productos agregados.');
     } else {
       for (ItemBiblioteca item in productosBiblioteca) {
-        item.mostrarInfo();
-        print('');
+        print(item.mostrarInfo());
       }
     }
   }

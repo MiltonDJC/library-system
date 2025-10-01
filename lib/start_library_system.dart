@@ -1,6 +1,6 @@
 import 'package:library_system/services/biblioteca.dart';
 import 'package:library_system/models/libro.dart';
-import 'package:library_system/models/usuario.dart';
+// import 'package:library_system/models/usuario.dart';
 
 void startLibrarySystem() {
   //Creación de libros:
@@ -13,21 +13,23 @@ void startLibrarySystem() {
 
   Biblioteca biblioteca = Biblioteca();
 
-  Usuario usuario1 = Usuario('Barbara');
+  // Usuario usuario1 = Usuario('Barbara');
   //Usuario presta un libro:
-  usuario1.prestarLibro(libro1);
+  // usuario1.prestarLibro(libro1);
   //Manejo de error controlado:
-  usuario1.prestarLibro(libro1);
+  // usuario1.prestarLibro(libro1);
   //Usuario devuelve un libro:
-  usuario1.devolverLibro(libro1);
+  // usuario1.devolverLibro(libro1);
   //Manejo de error controlado:
-  usuario1.devolverLibro(libro1);
+  // usuario1.devolverLibro(libro1);
 
   biblioteca.agregarProducto(libro1);
   biblioteca.agregarProducto(libro2);
   biblioteca.agregarProducto(libro3);
 
+  libro1.disponible = true;
   print('');
+  print(libro1.mostrarInfo());
 
-  biblioteca.mostrarProductos();
+  // biblioteca.mostrarProductos();
 }
