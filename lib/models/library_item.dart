@@ -1,4 +1,4 @@
 abstract class LibraryItem {
-  String showFormat();
+  String showInfo();
   bool isAvailable();
 }
