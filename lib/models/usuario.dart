@@ -14,13 +14,12 @@ class Usuario {
 
   void devolverLibro(Libro libro) {
     if (librosPrestados.contains(libro)) {
-      librosPrestados.removeWhere((libroPrestado) => libroPrestado == libro);
+      librosPrestados.remove(libro);
       libro.disponible = true;
-      print('Libro devuelvo exitosamente.');
+      print(libroDevueltoMessage(libro.disponible));
     } else {
-      print('Libro no adquirido.');
+      print(libroDevueltoMessage(libro.disponible));
     }
-    print('');
   }
 
   bool isLibroPrestable(Libro libro) => libro.disponible ? true : false;
@@ -28,4 +27,8 @@ class Usuario {
   String libroPrestadoMessage(bool disponible) => disponible
       ? 'Libro prestado al usuario: $nombre.'
       : 'El libro no puede ser prestado nuevamente.';
+
+  String libroDevueltoMessage(bool disponible) => disponible
+      ? 'Libro devuelto exitosamente.'
+      : 'Libro no adquirido previamente.';
 }
