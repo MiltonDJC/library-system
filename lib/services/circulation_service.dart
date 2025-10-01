@@ -17,7 +17,7 @@ class CirculationService {
     }
   }
 
-  void devolverLibro(User user, Book book) {
+  void returnBook(User user, Book book) {
     if (user.lentBooks.contains(book)) {
       user.lentBooks.remove(book);
       book.available = true;
