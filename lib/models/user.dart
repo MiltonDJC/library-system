@@ -1,7 +1,7 @@
 import 'package:library_system/models/book.dart';
 
-class Usuario {
+class User {
   String userName;
   List<Book> borrowedBooks = [];
-  Usuario(this.userName);
+  User(this.userName);
 }
