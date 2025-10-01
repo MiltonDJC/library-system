@@ -23,11 +23,23 @@ class Biblioteca {
 
   void mostrarProductos() {
     if (productosBiblioteca.isEmpty) {
-      print('Todavía no hay productos agregados.');
+      print(showProductosListados(productosBiblioteca)[0]);
     } else {
-      for (ItemBiblioteca item in productosBiblioteca) {
-        print(item.mostrarInfo());
+      for (String producto in showProductosListados(productosBiblioteca)) {
+        print(producto);
       }
+    }
+  }
+
+  List<String> showProductosListados(List<ItemBiblioteca> productos) {
+    if (productos.isEmpty) {
+      return ['Todavía no hay productos agregados.'];
+    } else {
+      List<String> productosListados = [];
+      for (ItemBiblioteca producto in productos) {
+        productosListados.add(producto.mostrarInfo());
+      }
+      return productosListados;
     }
   }
 
