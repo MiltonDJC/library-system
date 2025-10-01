@@ -8,7 +8,7 @@ class Usuario {
     if (isLibroPrestable(libro)) {
       librosPrestados.add(libro);
       libro.disponible = false;
-      print(isLibroPrestableMessage(libro.disponible));
+      print(libroPrestadoMessage(libro.disponible));
     }
   }
 
@@ -25,7 +25,7 @@ class Usuario {
 
   bool isLibroPrestable(Libro libro) => libro.disponible ? true : false;
 
-  String isLibroPrestableMessage(bool disponible) => disponible
+  String libroPrestadoMessage(bool disponible) => disponible
       ? 'Libro prestado al usuario: $nombre.'
       : 'El libro no puede ser prestado nuevamente.';
 }
