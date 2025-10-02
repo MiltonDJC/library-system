@@ -3,21 +3,21 @@ import 'package:library_system/models/library_item.dart';
 class Library {
   List<LibraryItem> libraryProducts = [];
 
-  void addProduct(LibraryItem product) {
+  String addProduct(LibraryItem product) {
     if (isProductInLibrary(product)) {
-      addProductMessage(true, product);
+      return addProductMessage(true, product);
     } else {
       libraryProducts.add(product);
-      addProductMessage(false, product);
+      return addProductMessage(false, product);
     }
   }
 
-  void deleteProduct(LibraryItem product) {
+  String deleteProduct(LibraryItem product) {
     if (isProductInLibrary(product)) {
       libraryProducts.remove(product);
-      deleteProductMessage(true, product);
+      return deleteProductMessage(true, product);
     } else {
-      deleteProductMessage(false, product);
+      return deleteProductMessage(false, product);
     }
   }
 
@@ -46,7 +46,7 @@ class Library {
   String deleteProductMessage(bool isProductInLibrary, LibraryItem product) {
     return isProductInLibrary
         ? '${product.runtimeType} succesfully deleted.'
-        : "El ${product.runtimeType}: $product, couldn't be found.";
+        : "The ${product.runtimeType}: $product, couldn't be found.";
   }
 
   String addProductMessage(bool isProductInLibrary, LibraryItem product) {
